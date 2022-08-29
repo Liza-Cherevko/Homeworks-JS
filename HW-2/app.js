@@ -14,12 +14,12 @@
 
 let num1 = prompt('Введите первое число');
 
-while  (num1 === null || num1 === '' ){
+while  (num1 === null || num1 === '' || isNaN(num1) ){
     num1 = prompt('Введите первое число еще раз');  
 }
-if (isNaN(num1)) {
-    num1 = prompt('Введите первое число еще раз'); 
-  }
+// if (isNaN(num1)) {
+//     num1 = prompt('Введите первое число еще раз'); 
+//   }
 
 
 
@@ -28,12 +28,12 @@ while(  action === null || action === ''){
     action = prompt('Введите действие');
 };
 let num2 = prompt('Введите второе число');
-while(num2 === null || num2 === ''){
+while(num2 === null || num2 === '' || isNaN(num2)){
     num2 = prompt('Введите второе число еще раз');
 };
-if (isNaN(num2)) {
-    num2 = prompt('Введите второе число еще раз'); 
-  }
+// if (isNaN(num2)) {
+//     num2 = prompt('Введите второе число еще раз'); 
+//   }
 let result;
 
 
