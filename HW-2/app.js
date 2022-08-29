@@ -12,39 +12,47 @@
 
 // 5. Вывести результат 
 
-let num1 = +prompt('Введите первое число');
-let action = prompt('Введите действие которое вы хотели бы совершить: +, -, *, /, %')
-let num2 = +prompt('Введите второе число');
+let num1 = prompt('Введите первое число');
+
+let action = prompt('Введите действие которое вы хотели бы совершить: +, -, *, /,')
+let num2 = prompt('Введите второе число');
+
 let result;
 
-while( isNaN(num1) ||  num1 === null || num1 === ''){
-    num1 = prompt('Введите первое число');
-}
+
+
+
+
+
+while  (num1 === null || num1 === '' ){
+    num1 = prompt('Введите первое число еще раз');  
+} 
+
 while(  action === null || action === ''){
     action = prompt('Введите действие');
-}
-while( isNaN(num2) ||  num2 === null || num2 === ''){
-    num2 = prompt('Введите первое число');
-}
+};
+while(num2 === null || num2 === ''){
+    num2 = prompt('Введите второе число еще раз');
+};
 
 function sum (num1, num2){
-    result = num1 + num2
-    alert(result)
+    result = +num1  + +num2
+    alert(` ${num1 } + ${num2} = ${result} `)
 }
 function sub (num1, num2){
-    result = num1 - num2
-    alert(result)
+    result = +num1  - +num2
+    alert(` ${num1 } - ${num2} = ${result} `)
 }
 function mul (num1, num2){
-    result = num1 * num2
-    alert(result)
+    result = +num1  * +num2
+    alert(` ${num1 } * ${num2} = ${result} `)
 }
 function div (num1, num2){
-    result = num1 - num2
-    alert(result)
+    result = +num1  / +num2
+    alert(` ${num1 } / ${num2} = ${result} `)
 }
 
-switch (action){
+switch (action) {
     case "+":
                 {
                     sum (num1, num2);
@@ -60,7 +68,7 @@ case "*":
         mul (num1, num2);
     }
 break; 
-case "%":
+case "/":
     {
         div (num1, num2);
     }
