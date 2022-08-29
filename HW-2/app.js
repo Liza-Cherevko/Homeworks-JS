@@ -14,26 +14,36 @@
 
 let num1 = prompt('Введите первое число');
 
-let action = prompt('Введите действие которое вы хотели бы совершить: +, -, *, /,')
-let num2 = prompt('Введите второе число');
+while  (num1 === null || num1 === '' ){
+    num1 = prompt('Введите первое число еще раз');  
+}
+if (isNaN(num1)) {
+    num1 = prompt('Введите первое число еще раз'); 
+  }
 
+
+
+let action = prompt('Введите действие которое вы хотели бы совершить: +, -, *, /,')
+while(  action === null || action === ''){
+    action = prompt('Введите действие');
+};
+let num2 = prompt('Введите второе число');
+while(num2 === null || num2 === ''){
+    num2 = prompt('Введите второе число еще раз');
+};
+if (isNaN(num2)) {
+    num2 = prompt('Введите второе число еще раз'); 
+  }
 let result;
 
 
 
 
+ 
 
 
-while  (num1 === null || num1 === '' ){
-    num1 = prompt('Введите первое число еще раз');  
-} 
 
-while(  action === null || action === ''){
-    action = prompt('Введите действие');
-};
-while(num2 === null || num2 === ''){
-    num2 = prompt('Введите второе число еще раз');
-};
+
 
 function sum (num1, num2){
     result = +num1  + +num2
