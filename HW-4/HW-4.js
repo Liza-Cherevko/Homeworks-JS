@@ -66,7 +66,7 @@ function getOperandInvalid (operand) {
 function operandCalculation() {
     console.log('numberOfvalue:', numberOfvalue)
     let acc;
- 
+    let str =''
     for (let i = 0; i < numberOfvalue; i++) {
         
         let operand = showNum('Put operand ');
@@ -74,22 +74,26 @@ function operandCalculation() {
         console.log('current operand:', operand)
         if (i === 0) {
             acc = operand
+            str += `${operand} `  
         }
         else {
             switch (action) {
       
                 case '+':
                     acc =  acc + operand;
-                   
+                    str += `+ ${operand}`;
                     break;
                 case '-':
-                    acc =  acc - operand;
+                    acc = acc - operand;
+                    str += `- ${operand}`;
                     break;
                 case '*':
                     acc = acc * operand;
+                    str += `* ${operand}`;
                     break;
                 case '/':
                     acc = acc / operand;
+                    str += `/ ${operand}`;
                     break;
                 default:
                     alert('Something wrong')
@@ -99,5 +103,6 @@ function operandCalculation() {
         }
     }
 
-    alert(acc);
+    let result = ` ${str} = ${acc}`;
+    alert(result)
 }
