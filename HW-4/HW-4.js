@@ -17,12 +17,10 @@
 
 let action = getAction()
 let numberOfvalue = getNumbers('Put numbers of value')
-let value = showNum()
-let calculation = getActionCalculation()
-let condition = getCondition()
+let value = showNum('Put operand ')
 
-// let result = calculate( action)
-// showResult(action, result)
+
+
 
 
 function getAction(){ 
@@ -39,7 +37,7 @@ function getActionInvalid(action) {
 }
 
 function getNumbers(title) { 
-    let number = prompt(title);
+    let number = prompt(title);  
     while (getNumbersInvalid(number)) { 
         number = prompt('Put number of values again')
     }
@@ -51,11 +49,34 @@ function getNumbersInvalid (number) {
 }
 
 
-function showNum (title){
-    let operand = prompt(title)
-    for (let i = 0 ; i <= numberOfvalue; i++) { 
+function showNum(title) {
+    let calc;
+    let sum;
+        let operand = prompt(title)
+    for (let i = 1 ; i < numberOfvalue; i++) { 
         if (operand !== numberOfvalue ) { 
             operand = prompt(title)
+            switch (action){
+                case '+':
+                    calc = `${operand} + ${i}`;
+                 
+                    alert(` ${sum} = ${calc}`);
+                    break;
+                case '-':
+                    calc = `${operand} - ${i}`;
+                    sum += i;
+                    break;
+                case '*':
+                    calc = `${operand} * ${i}`;
+                    sum += i;
+                    break;
+                case '/':
+                    calc = `${operand} / ${i}`;
+                    sum += i;
+                    break;
+                 default:
+                    alert('Something wrong')       
+            } 
         }
     }
     while (getOperandInvalid(operand)) { 
@@ -64,20 +85,9 @@ function showNum (title){
     return +operand
 }
 
-function calculate(action){
-    switch (action){
-        case '+':
-            return operand[i] + operand[i];
-        case '-':
-            return operand[i] - operand[i];
-        case '*':
-           return operand[i] * operand[i];
-        case '/':
-            return operand[i] / operand[i];
-         default:
-            alert('Something wrong')       
-    }
+
+function getOperandInvalid (operand) { 
+    return operand === null || operand.trim() === '' || isNaN(operand) || operand <=0;
 }
-function showResult( action, result) {
-    alert(`${operand[i]}  ${action} ${operand[i]}   = ${result}`);
-}
+
+

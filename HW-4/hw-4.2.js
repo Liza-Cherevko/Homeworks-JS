@@ -4,8 +4,7 @@ let value = showNum()
 let calculate = getActionCalculation()
 let condition = getCondition()
 showResult()
-// let result = calculate( action)
-// showResult(action, result)
+
 
 
 function getAction(){ 
@@ -70,7 +69,7 @@ function getActionCalculation() {
 }
 
 function getCondition() { 
-    let condition; 
+    let condition;
     switch (action) { 
         case '+':
             condition = value.join('+');
