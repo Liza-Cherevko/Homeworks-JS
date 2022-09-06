@@ -56,7 +56,7 @@ function showNum(title) {
     for (let i = 1; i < numberOfvalue; i++) {
         if (operand !== numberOfvalue) {
               operand = prompt(title)
-         }
+        }       
     }
     while (getOperandInvalid(operand)) {
         operand = prompt('Put operand again')
@@ -86,16 +86,16 @@ function operandCalculation() {
                     acc =  acc - operand;
                     break;
                 case '*':
-                    acc =  acc * operand;
+                    acc = acc * operand;
                     break;
                 case '/':
-                    acc =  acc / operand;
+                    acc = acc / operand;
                     break;
                 default:
                     alert('Something wrong')
             }
-            let result = `${operand} = ${acc}`;
-            alert(result);
+            // let result = `${operand} = ${acc}`;
+            alert(acc);
         }
     }
 }
