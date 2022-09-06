@@ -70,35 +70,31 @@ function getOperandInvalid (operand) {
 
 function operandCalculation() {
     let acc;
-    let str = '0';
  
     for (let i = 0; i < numberOfvalue; i++) {
-        if (i === 1) {
+        if (i === 0) {
             acc = operand;
         }
         else {
             switch (action) {
       
                 case '+':
-                    acc = `${acc} + ${i}`;
-                    str += i;
+                    acc =  acc + operand;
+                   
                     break;
                 case '-':
-                    str = `${acc} - ${operand} `
-                    acc += operand
+                    acc =  acc - operand;
                     break;
                 case '*':
-                    str = `${acc} * ${operand} `
-                    acc += operand
+                    acc =  acc * operand;
                     break;
                 case '/':
-                    str = `${acc} / ${operand} `
-                    acc += operand
+                    acc =  acc / operand;
                     break;
                 default:
                     alert('Something wrong')
             }
-            let result = ` ${str} = ${acc}`;
+            let result = `${operand} = ${acc}`;
             alert(result);
         }
     }
