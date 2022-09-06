@@ -49,45 +49,53 @@ function getNumbersInvalid (number) {
 }
 
 
+
 function showNum(title) {
-    let calc;
-    let sum;
-        let operand = prompt(title)
-    for (let i = 1 ; i < numberOfvalue; i++) { 
-        if (operand !== numberOfvalue ) { 
-            operand = prompt(title)
-            switch (action){
+    let acc;
+    let str = '0'
+    let operand = prompt(title)
+    for (let i = 0; i < numberOfvalue; i++) {
+        if (i === 0) {
+            acc = operand;
+        }
+        else {
+            switch (action) {
                 case '+':
-                    calc = `${operand} + ${i}`;
-                 
-                    alert(` ${sum} = ${calc}`);
+                    str = `${acc} + ${operand} `
+                    acc += operand
                     break;
                 case '-':
-                    calc = `${operand} - ${i}`;
-                    sum += i;
+                    str = `${acc} - ${operand} `
+                    acc += operand
                     break;
                 case '*':
-                    calc = `${operand} * ${i}`;
-                    sum += i;
+                    str = `${acc} * ${operand} `
+                    acc += operand
                     break;
                 case '/':
-                    calc = `${operand} / ${i}`;
-                    sum += i;
+                    str = `${acc} / ${operand} `
+                    acc += operand
                     break;
-                 default:
-                    alert('Something wrong')       
-            } 
+                default:
+                    alert('Something wrong')
+            }
         }
     }
-    while (getOperandInvalid(operand)) { 
+    while (getOperandInvalid(operand)) {
         operand = prompt('Put operand again')
     }
-    return +operand
+   alert(` ${str} = ${acc}`);
 }
+  
+// function getOperandAsk(operand) { 
+//      if (operand !== numberOfvalue) {
+//         operand = prompt(title)
+//     }
+//     return operand = prompt(title)
+// }
 
 
 function getOperandInvalid (operand) { 
     return operand === null || operand.trim() === '' || isNaN(operand) || operand <=0;
 }
-
 
