@@ -80,7 +80,7 @@ function operandCalculation() {
             switch (action) {
       
                 case '+':
-                    acc =  acc + operand;
+                    acc = acc + operand;
                     str += `+ ${operand}`;
                     break;
                 case '-':
