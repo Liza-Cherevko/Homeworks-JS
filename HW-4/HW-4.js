@@ -17,9 +17,12 @@
 
 let action = getAction()
 let numberOfvalue = getNumbers('Put numbers of value')
-let value = showNum('Put operand')
-let result = calculate( action)
-showResult(action, result)
+let value = showNum()
+let calculation = getActionCalculation()
+let condition = getCondition()
+
+// let result = calculate( action)
+// showResult(action, result)
 
 
 function getAction(){ 
@@ -46,9 +49,7 @@ function getNumbers(title) {
 function getNumbersInvalid (number) { 
     return number === null || number.trim() === '' || isNaN(number);
 }
-function getOperandInvalid (operand) { 
-    return operand === null || operand.trim() === '' || isNaN(operand);
-}
+
 
 function showNum (title){
     let operand = prompt(title)
@@ -80,59 +81,3 @@ function calculate(action){
 function showResult( action, result) {
     alert(`${operand[i]}  ${action} ${operand[i]}   = ${result}`);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getCalculate( action){
-//     switch (action){
-//         case '+':
-//             return  operand + operand;
-//         case '-':
-//             return operand - operand;
-//         case '*':
-//             return operand * operand;
-//         case '/':
-//             return operand / operand;
-//          default:
-//             alert('Something wrong')       
-//     }
-// }
-
-// function showResult (){
-//     let sum = 0,
-//         sub = 0,
-//         mul = 0,
-//         div = 0;
-    
-//     for (let i = 0; i <= numberOfvalue; i++) {
-//         if (action == '+') {
-//             sum = `${i} + ${i}`;
-           
-//         } else if (action == '-') {
-//             sub = `${i} - ${i}`;
-//         } else if (action == '*') {
-//             mul = `${i} * ${i}`;
-//         } else { 
-//             div = `${i} / ${i}`;
-//         }
-//     }
-
-//     alert( `${i} ${action} ${i} = ${result} `);
-// }
