@@ -17,8 +17,9 @@
 
 let action = getAction()
 let numberOfvalue = getNumbers('Put numbers of value')
+let operand;
 let value = showNum('Put operand ')
-
+let calc = operandCalculation()
 
 
 
@@ -51,18 +52,36 @@ function getNumbersInvalid (number) {
 
 
 function showNum(title) {
+     operand = prompt(title)
+    for (let i = 1; i < numberOfvalue; i++) {
+        if (operand !== numberOfvalue) {
+              operand = prompt(title)
+         }
+    }
+    while (getOperandInvalid(operand)) {
+        operand = prompt('Put operand again')
+    }
+    return +operand;
+}
+
+function getOperandInvalid (operand) { 
+    return operand === null || operand.trim() === '' || isNaN(operand) || operand <=0;
+}
+
+function operandCalculation() {
     let acc;
-    let str = '0'
-    let operand = prompt(title)
+    let str = '0';
+ 
     for (let i = 0; i < numberOfvalue; i++) {
-        if (i === 0) {
+        if (i === 1) {
             acc = operand;
         }
         else {
             switch (action) {
+      
                 case '+':
-                    str = `${acc} + ${operand} `
-                    acc += operand
+                    acc = `${acc} + ${i}`;
+                    str += i;
                     break;
                 case '-':
                     str = `${acc} - ${operand} `
@@ -79,23 +98,8 @@ function showNum(title) {
                 default:
                     alert('Something wrong')
             }
+            let result = ` ${str} = ${acc}`;
+            alert(result);
         }
     }
-    while (getOperandInvalid(operand)) {
-        operand = prompt('Put operand again')
-    }
-   alert(` ${str} = ${acc}`);
 }
-  
-// function getOperandAsk(operand) { 
-//      if (operand !== numberOfvalue) {
-//         operand = prompt(title)
-//     }
-//     return operand = prompt(title)
-// }
-
-
-function getOperandInvalid (operand) { 
-    return operand === null || operand.trim() === '' || isNaN(operand) || operand <=0;
-}
-
