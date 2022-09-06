@@ -14,11 +14,11 @@
 //Выводим результат
 // 2 - 3 -5 = -6
 
-
+let operand;
 let action = getAction()
 let numberOfvalue = getNumbers('Put numbers of value')
-let operand;
-let value = showNum('Put operand ')
+
+//let value = showNum('Put operand ')
 let calc = operandCalculation()
 
 
@@ -52,12 +52,7 @@ function getNumbersInvalid (number) {
 
 
 function showNum(title) {
-     operand = prompt(title)
-    for (let i = 1; i < numberOfvalue; i++) {
-        if (operand !== numberOfvalue) {
-              operand = prompt(title)
-        }       
-    }
+    operand = prompt(title);    
     while (getOperandInvalid(operand)) {
         operand = prompt('Put operand again')
     }
@@ -69,11 +64,16 @@ function getOperandInvalid (operand) {
 }
 
 function operandCalculation() {
+    console.log('numberOfvalue:', numberOfvalue)
     let acc;
  
     for (let i = 0; i < numberOfvalue; i++) {
+        
+        let operand = showNum('Put operand ');
+
+        console.log('current operand:', operand)
         if (i === 0) {
-            acc = operand;
+            acc = operand
         }
         else {
             switch (action) {
@@ -95,7 +95,9 @@ function operandCalculation() {
                     alert('Something wrong')
             }
             // let result = `${operand} = ${acc}`;
-            alert(acc);
+            
         }
     }
+
+    alert(acc);
 }
