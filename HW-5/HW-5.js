@@ -5,6 +5,8 @@
 
 
 
+
+let operand;
 let array = []
 let action = getAction()
 let value = getOperands()
@@ -38,30 +40,30 @@ function getOperands(title) {
 
 function calculate() { 
     let condition;
-    let str = ''
+    let str = '';
     for (let i = 0; i <= value.length; i++) {
         if (i === 0) {
-            condition = operand
-            str += operand[i]
+            condition = value[i]
+            str +=  `${value[i]} `
         }
         else {
             {  
             switch (action) {
                 case '+':
                     condition = array.map(i => x += i, x = 0).reverse()[0]
-                    str += ` + ${operand[i]} `;
+                    str += ` + ${value[i]} `;
                     break;
                 case '-':
                     condition = array.reduce((acc, rec) => acc - rec);
-                    str += `- ${operand[i]}`;
+                    str += `- ${value[i]}`;
                     break;
                 case '*':
                     condition = array.reduce((acc, rec) => acc * rec);
-                    str += `* ${operand[i]}`;
+                    str += `* ${value[i]}`;
                     break;
                 case '/':
                     condition = array.reduce((acc, rec) => acc / rec);
-                    str += `/ ${operand[i]}`;
+                    str += `/ ${value[i]}`;
                     break;
             }
         } 
