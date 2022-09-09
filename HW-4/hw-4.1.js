@@ -48,7 +48,7 @@ function isOperandInvalid(operand) {
 function operandCalculation() {
     console.log('numberOfvalue:', num)
     let acc;
-    let str =''
+    let str = ''
     for (let i = 0; i < num; i++) {
         
         let operand = showOperand('Put operand ');
@@ -56,37 +56,38 @@ function operandCalculation() {
         console.log('current operand:', operand)
         if (i === 0) {
             acc = operand
-            str += `${operand} `  
+            str += `${operand} `
         }
         else {
-            switch (action) {
+            {
+                switch (action) {
       
-                case '+':
-                    acc = acc + operand;
-                    str += `+ ${operand}`;
-                    break;
-                case '-':
-                    acc = acc - operand;
-                    str += `- ${operand}`;
-                    break;
-                case '*':
-                    acc = acc * operand;
-                    str += `* ${operand}`;
-                    break;
-                case '/':
-                    acc = acc / operand;
-                    str += `/ ${operand}`;
-                    break;
-                default:
-                    alert('Something wrong')
-            }
+                    case '+':
+                        acc = acc + operand;
+                        str += `+ ${operand}`;
+                        break;
+                    case '-':
+                        acc = acc - operand;
+                        str += `- ${operand}`;
+                        break;
+                    case '*':
+                        acc = acc * operand;
+                        str += `* ${operand}`;
+                        break;
+                    case '/':
+                        acc = acc / operand;
+                        str += `/ ${operand}`;
+                        break;
+                    default:
+                        alert('Something wrong')
+                }
         
             
+            }
         }
+
+        let result = ` ${str} = ${acc}`;
+        alert(result)
     }
 
-    let result = ` ${str} = ${acc}`;
-    alert(result)
 }
-
-
