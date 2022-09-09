@@ -44,6 +44,7 @@ function getNumber(title, validationFn) {
 
     return +operand;
 }
+<<<<<<< HEAD
 
 function isNumberInvalid(val) {
     return val === null || val.trim() === '' || isNaN(val);
@@ -178,3 +179,54 @@ function showResult(expression) {
 // }
 
 
+=======
+function isOperandInvalid(operand) { 
+    return operand == null || operand.trim() == '' || isNaN(operand) || operand < 0;
+}
+function operandCalculation() {
+    console.log('numberOfvalue:', num)
+    let acc;
+    let str = ''
+    for (let i = 0; i < num; i++) {
+        
+        let operand = showOperand('Put operand ');
+
+        console.log('current operand:', operand)
+        if (i === 0) {
+            acc = operand
+            str += `${operand} `
+        }
+        else {
+            {
+                switch (action) {
+      
+                    case '+':
+                        acc = acc + operand;
+                        str += `+ ${operand}`;
+                        break;
+                    case '-':
+                        acc = acc - operand;
+                        str += `- ${operand}`;
+                        break;
+                    case '*':
+                        acc = acc * operand;
+                        str += `* ${operand}`;
+                        break;
+                    case '/':
+                        acc = acc / operand;
+                        str += `/ ${operand}`;
+                        break;
+                    default:
+                        alert('Something wrong')
+                }
+        
+            
+            }
+        }
+
+        let result = ` ${str} = ${acc}`;
+        alert(result)
+    }
+
+}
+>>>>>>> ace1b250c1e8e133bfe9e88bd96db80459b4f940
