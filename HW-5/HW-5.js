@@ -43,15 +43,15 @@ function calculate() {
     let str = '';
     for (let i = 0; i <= value.length; i++) {
         if (i === 0) {
-            condition = value[i]
-            str +=  `${value[i]} `
+            condition = value
+            str += ` ${value[0]} `;
         }
         else {
             {  
             switch (action) {
                 case '+':
                     condition = array.map(i => x += i, x = 0).reverse()[0]
-                    str += ` + ${value[i]} `;
+                    str +=  `+ ${value[i]}`
                     break;
                 case '-':
                     condition = array.reduce((acc, rec) => acc - rec);
@@ -69,8 +69,9 @@ function calculate() {
         } 
     }
 }
-    console.log(str)
+    
     let result = ` ${str} = ${condition}`;
+    console.log(result)
     alert(result)
  }
 
