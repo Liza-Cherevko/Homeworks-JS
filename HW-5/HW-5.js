@@ -49,6 +49,7 @@ function calculateResult(values, operator) {
    
 }
 
+
 function calculate(a, b, action) {
     switch (action) {
         case '+':
@@ -61,6 +62,7 @@ function calculate(a, b, action) {
             return a / b;
         default:
             alert('Something wrong');
+
     }
 }
 
