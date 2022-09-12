@@ -20,20 +20,22 @@ function isOperationInvalid(action) {
 }
 
 function getOperands() {
+    let operands;
+    do {
+        operands = getAnswer().split(',').map(Number)
+    } while (operands.findIndex((item)=>isNaN(item))!== -1);
+    // const operands = answer.split(',').map(Number).filter((item)=> !isNaN(item));
+    
+  
+    return operands;
+}
+
+function getAnswer() { 
     const answer = prompt('Operands?')
     while (isOperandsAnswerInvalid(answer)) { 
         answer = prompt('Put operands again')
     }
-
-    // const operandsStr = answer.split(',')
-    // let operands = [];
-    // for (let i = 0; i < operandsStr.length; i++) { 
-    //     operands[i] = +operandsStr[i];
-    // }
-    const operands = answer.split(',').map(Number).filter((item)=> !isNaN(item));
-    
-    console.log(operands)
-    return operands
+    return answer
 }
 function isOperandsAnswerInvalid(val) { 
     return val === null || val.trim() === '';

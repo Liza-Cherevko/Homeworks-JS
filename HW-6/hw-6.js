@@ -2,6 +2,8 @@
 
 // calculateGroupAverageMark - выведет средний бал по всем студентам, переданным в аргументе
 
+
+
 const students = [
     {
         id:10,
@@ -24,13 +26,17 @@ const students = [
         marks: [10, 9, 8, 9 ]
     }
 ]
+let marks = getMarks(students);
  
-function getMarks() { 
-   let marks = 
+function getMarks(students) { 
+  return studentMarks = students.find(item => item.id ==10);
 }
 
 
 
-// function calculateStudentAverageMark() { 
+// function calculateStudentAverageMark(students) {
+
+// }
+// function calculateGroupAverageMark(students) { 
 
 // }
